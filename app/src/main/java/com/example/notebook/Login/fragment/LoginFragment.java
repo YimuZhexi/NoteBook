@@ -1,5 +1,8 @@
 package com.example.notebook.Login.fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,13 +16,14 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.example.notebook.Login.main.MainActivity;
 import com.example.notebook.R;
 
 public class LoginFragment extends Fragment {
 
     private EditText lgEtUsername, lgEtPassword;
     private CheckBox lgCkRemember;
-    private Button lgBtnLogin, lgBtnCreate;
+    SharedPreferences sharedPreferences;
 
     View view;
 
@@ -39,17 +43,29 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         initView();
         setView();
+        remember();
     }
 
+    //初始化界面
     public void initView() {
         lgEtUsername = view.findViewById(R.id.login_et_fragment_username);
         lgEtPassword = view.findViewById(R.id.login_et_fragment_password);
         lgCkRemember = view.findViewById(R.id.login_cb_fragment_remember);
-        lgBtnLogin = view.findViewById(R.id.login_btn_fragment_login);
-        lgBtnCreate = view.findViewById(R.id.login_btn_fragment_create);
+        sharedPreferences = requireContext().getSharedPreferences("Data", Context.MODE_PRIVATE);
     }
 
-    public void setView(){
-        
+    //设置界面
+    public void setView() {
+        lgCkRemember.setChecked(false);
+    }
+
+    //记住密码
+    public void remember() {
+        if (lgCkRemember.isChecked()) {
+            String username = sharedPreferences.getString("username", "");
+            String password = sharedPreferences.getString("password", "");
+            lgEtUsername.setText(username);
+            lgEtPassword.setText(password);
+        }
     }
 }

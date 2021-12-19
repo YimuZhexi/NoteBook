@@ -2,8 +2,118 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".Login.fragment.CreateDialog">
 
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="650dp"
+        android:background="@color/white"
+        android:contentDescription="@string/background"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginBottom="84dp"
+        android:contentDescription="@string/head"
+        android:src="@drawable/head"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+        tools:ignore="MissingConstraints,ImageContrastCheck" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/username"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout5"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/create_et_dialog_username"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="username"
+            android:background="@color/white"
+            android:inputType="text"
+            android:lines="1"
+            android:textStyle="bold"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/create_et_dialog_password"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="password"
+            android:background="@color/white"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:textStyle="bold"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        app:layout_constraintBottom_toTopOf="@+id/create_btn_dialog_create"
+        app:layout_constraintEnd_toEndOf="@+id/create_btn_dialog_create"
+        app:layout_constraintStart_toStartOf="@+id/create_btn_dialog_create"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/create_et_dialog_password2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="password"
+            android:background="@color/white"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:textStyle="bold"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/create_btn_dialog_create"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/create"
+        android:textColorHint="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/create_btn_dialog_cancel"
+        app:layout_constraintEnd_toEndOf="@+id/create_btn_dialog_cancel"
+        app:layout_constraintStart_toStartOf="@+id/create_btn_dialog_cancel"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/create_btn_dialog_cancel"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="112dp"
+        android:hint="@string/cancel"
+        android:textColorHint="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
